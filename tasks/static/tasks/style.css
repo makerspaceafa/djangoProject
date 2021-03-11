@@ -1,5 +1,9 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
 body {
-    background: #052054;
+    background: linear-gradient(135deg, rgb(0,212,255) 0%, rgb(32,11,221) 100%);
     color: white;
     font-family: "Helvetica", sans-serif;
 }
