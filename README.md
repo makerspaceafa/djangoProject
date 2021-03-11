@@ -30,3 +30,55 @@ Ou podem usar `python manage.py runserver` na linha de comandos.
    - Vulnerabilidades de segurança (possibilidade de ver/editar tasks de outros users).
 6. Sistema de “prioridades” para ranking das tarefas (prioridade mais elevada aparece primeiro na lista)
 7. Permitir aos users reordenar tarefas (click and drag) e automaticamente ajustar a sua prioridade na base de dados (requires JavaScript).
+
+## Como contribuir
+Este repositório segue os princípios do [GitHub Flow](https://guides.github.com/introduction/flow/) mas com algumas alterações.  
+
+### Estrutura do repositório
+**2 branches permanentes:**
+- develop (default branch).
+- production (commits bloqueadas - só entra código via pull request).
+
+**Vários branches temporários:**  
+A nomenclatura destes branches deve ser apropriada e intuitiva.
+- Desenvolver nova feature: `feature/XX`.
+- Resolver um problema de uma feature existente: `fix/XX`.
+- Outras situações...
+
+## Flow
+O código flui da seguinte maneira:
+
+<table>
+  <tbody>
+    <tr>
+      <td>feature/XX</td> <td>⇨</td> <td>develop</td> <td>⇨</td> <td>production</td>
+    </tr>
+    <tr>
+      <td>fix/XX</td> <td>⇨</td> <td>⇧</td>
+    </tr>
+    <tr>
+      <td>etc</td> <td>⇨</td> <td>⇧</td>
+    </tr>
+  </tbody>
+</table>
+
+### Exemplos
+#### A) Adicionar uma nova feature (ex: notificações push)
+1. Fazer pull do main mais recente: `git pull origin develop`.
+2. Criar o meu feature branch: `git checkout -b feature/push-notifications`.
+3. Escrever código, adicionar commits etc...
+5. Abrir Pull Request `feature/push-notifications` -> `develop`.
+6. Discutir PR, alterar branch, etc...
+7. Se PR foi aprovado: merge to `develop`.
+
+#### B) Arranjar bug/crash no main (ex: issue #XX - user crashes on login)
+1. Fazer pull do main mais recente: `git pull origin develop`.
+2. Criar o meu fix branch com o numero do issue se existir: `git checkout -b fix/XX-login-crash`.
+3. Escrever código, adicionar commits etc...
+5. Abrir Pull Request `fix/XX-login-crash` -> `develop`.
+6. Discutir PR, alterar branch, etc...
+7. Se PR foi aprovado: merge to `develop`.
+
+#### C) Criar uma release a partir do main
+2. Abrir PR para o `production`.
+4. Quando o PR for aprovado, merge to `production`.
