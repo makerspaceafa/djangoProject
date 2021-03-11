@@ -1,0 +1,34 @@
+{% extends 'tasks/layout.html' %}
+
+{% block body %}
+
+    {% if user.is_authenticated %}
+
+        <h1>Tasks Privadas</h1>
+        <ul>
+            {% for item in tasks %}
+                <li>
+                    {{ item.name }}
+                    <form action="{% url 'privada' %}" method="post" style="display: inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="task" value="{{ item.name }}">
+                        <input type="submit" value="❌" name="remover">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <form action="{% url 'privada' %}" method="post" class="add-task">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="adicionar">
+        </form>
+
+    {% else %}
+        <h1><a href="{% url 'login'%}">Click here to login!</a></h1>
+
+    {% endif %}
+
+    <a href="{% url 'index' %}">Lista Pública</a>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
