@@ -3,7 +3,7 @@ html, body {
     height: 100%;
 }
 body {
-    background: linear-gradient(135deg, rgb(0,212,255) 0%, rgb(32,11,221) 100%);
+    background: #0CCC3F;
     color: white;
     font-family: "Helvetica", sans-serif;
 }
