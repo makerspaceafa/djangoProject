@@ -10,3 +10,5 @@ COPY requirements.txt /djangoProject/
 RUN pip install -r requirements.txt
 # Copies all files from our project into the container
 COPY . /djangoProject/
+# migrations
+RUN python manage.py migrate
