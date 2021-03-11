@@ -24,8 +24,9 @@ Ou podem usar `python manage.py runserver` na linha de comandos.
 2. O visual está a precisar de um jeitinho.
 3. Já experimentaram brincar com tarefas com o mesmo nome?
    Na lista privada está a funcionar tudo bem? De certeza?
-4. Encontrar e arranjar as inúmeras vulnerabilidades que existem neste website:
+4. E redesenhar o front-end para ser mobile first?
+5. Encontrar e arranjar as inúmeras vulnerabilidades que existem neste website:
    - Crashes quando os utilizadores fazem algo fora do "percurso planeado";
    - Vulnerabilidades de segurança (possibilidade de ver/editar tasks de outros users).
-5. Sistema de “prioridades” para ranking das tarefas (prioridade mais elevada aparece primeiro na lista)
-6. Permitir aos users reordenar tarefas (click and drag) e automaticamente ajustar a sua prioridade na base de dados (requires JavaScript).
+6. Sistema de “prioridades” para ranking das tarefas (prioridade mais elevada aparece primeiro na lista)
+7. Permitir aos users reordenar tarefas (click and drag) e automaticamente ajustar a sua prioridade na base de dados (requires JavaScript).
