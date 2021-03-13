@@ -4,7 +4,7 @@
 
     {% if user.is_authenticated %}
 
-        <h1>Tasks Privadas</h1>
+        <h1 class="text">Tasks Privadas</h1>
         <ul>
             {% for item in tasks %}
                 <li>
@@ -12,7 +12,7 @@
                     <form action="{% url 'privada' %}" method="post" style="display: inline">
                         {% csrf_token %}
                         <input type="hidden" name="task" value="{{ item.name }}">
-                        <input type="submit" value="❌" name="remover">
+                        <input type="submit" value="X" name="remover">
                     </form>
                 </li>
             {% endfor %}
@@ -29,6 +29,7 @@
 
     {% endif %}
 
-    <a href="{% url 'index' %}">Lista Pública</a>
-    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'index' %}" class="text">Lista Pública</a>
+    <a href="{% url 'logout' %}" class="text">Logout</a>
+
 {% endblock %}
