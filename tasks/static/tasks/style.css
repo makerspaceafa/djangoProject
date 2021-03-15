@@ -5,9 +5,10 @@ html, body {
 }
 
 @viewport {
-  width: device-width ;
+  width: device-width;
   zoom: 1.0 ;
 }
+
 body {
     background: rgb(36,29,149);
     background: linear-gradient(90deg, rgba(36,29,149,1) 0%, rgba(11,11,190,1) 24%, rgba(0,212,255,1) 100%);
