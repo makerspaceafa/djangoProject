@@ -10,7 +10,7 @@ tasks = []
 
 
 class NewTaskForm(forms.Form):
-    task = forms.CharField(label='new task')
+    task = forms.CharField(label='nova task')
 
 
 # Form auto-gerado a partir do nosso Objeto Tarefa (Task model)
