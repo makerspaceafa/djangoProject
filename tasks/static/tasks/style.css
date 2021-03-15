@@ -30,6 +30,11 @@ a {
     width: 40%;
 }
 
+ul {
+    text-align: center;
+    list-style: inside;
+}
+
 .remove-form {
     display: inline-flex;
 }
@@ -44,8 +49,5 @@ a {
   text-align: center;
 }
 
-ul {
-    text-align: center;
-    list-style: inside;
-}
+
 
