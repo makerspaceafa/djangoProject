@@ -6,7 +6,8 @@ Está aqui para servir de base ao workshop prático de Git/GitHub também.
 ## Setup:
 (Só é necessário correr a primeira vez, ou após fazer alterações aos models)
 - Criar venv: `python -m venv xxx`, onde `xxx` é o nome da pasta onde vai ficar o ambiente.  
-  O padrão é chamá-la `venv` também.  
+  O padrão é chamá-la `venv` também. 
+- `pip install -r requirements.txt` -> instalar módulos necessários para o projeto.
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 
