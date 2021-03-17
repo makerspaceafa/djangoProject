@@ -2,9 +2,42 @@
 
 {% block body %}
 
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        
+        $ ( function() {
+            $( "#task_list" ).sortable();
+            $( "#task_list" ).disableSelection();
+        } );
+
+        /*function drag(ev){
+            ev.dataTransfer.setData("text", ev.target.id); // Reter o id da task que fizemos "drag"
+        }
+        
+        function allowDrop(ev){
+            ev.preventDefault(); // Permitir dar "drop" 
+        }
+
+        function drop(ev){
+            ev.preventDefault(); // Permitir dar "drop" 
+            let data = ev.dataTransfer.getData("text"); // Obter a informaçáo do "drag" feito anteriormente e guardar em data
+
+            //Agora que já temos a informação sobre a tarefa que fizemos"drag", o que fazer com ela?
+
+            ev.target.append(document.getElementById(data)); //onde é que vai dar append, se é que vai sequer
+            
+
+            //hipótese: criar divs invisiveis entre as tasks e dar append nessas divs (ondragover="allowDrop(event)" ondrop="drop(event)" id="{{ item }}div") (draggable="true" ondragstart="drag(event)" id="{{ item }}")
+            //trocar as posições
+        } */
+        
+    </script>
+
     <h1>Tasks Públicas</h1>
-    <ul>
-        {% for item in tasks %}
+    <div>
+        <ul id="task_list" class="ui-sortable">
+            {% for item in tasks %}
             <li>
                 {{ item }}
                 <form action="{% url 'index' %}" method="post" class="remove-form">
@@ -13,8 +46,9 @@
                     <input type="submit" value="❌" name="remover">
                 </form>
             </li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+    </div>
 
     <form action="{% url 'index' %}" method="post" class="add-task" >
         {% csrf_token %}
