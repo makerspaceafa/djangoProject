@@ -11,6 +11,7 @@ tasks = []
 
 class NewTaskForm(forms.Form):
     task = forms.CharField(label='new task')
+    hierarchy = forms.IntegerField(label='hierarquia')
 
 
 # Form auto-gerado a partir do nosso Objeto Tarefa (Task model)
@@ -28,10 +29,14 @@ def index(request):
         if 'remover' in request.POST:
             if request.POST['task'] in tasks:
                 tasks.remove(request.POST['task'])
+                tasks.remove(request.POST['hierarchy'])
+
         elif 'adicionar' in request.POST:
             form = NewTaskForm(request.POST)
             if form.is_valid():
                 tasks.append(form.cleaned_data['task'])
+                tasks.append(form.cleaned_data['hierarchy'])
+
 
     form = NewTaskForm()
     return render(request, 'tasks/index.html', {'tasks': tasks, 'form': form})
